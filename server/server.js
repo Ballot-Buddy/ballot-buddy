@@ -101,6 +101,14 @@ app.use('/logout', (req, res) => {
 // Handles requests for election info
 app.use('/api', buddyRouter);
 
+// For checking login when page loads
+// This was a last-minute attempt- good luck!
+
+// app.use('/checklogin', (req, res) => {
+//   if (req.user) return res.status(200).json({user: req.user});
+//   res.status(314).json("Not logged in");
+// })
+
 // For saving ballots (was not able to implement)
 app.use('/user', userRouter);
 
