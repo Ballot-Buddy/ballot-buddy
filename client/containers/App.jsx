@@ -1,4 +1,4 @@
-import React, { useState, Component } from 'react';
+import React, { useState, useEffect, Component } from 'react';
 import { BrowserRouter as Router, useHistory, Switch, withRouter, Link, Route } from 'react-router-dom';
 import history from '../history';
 
@@ -13,7 +13,24 @@ const App = props => {
   const [address, setAddress] = useState('');
 
   // TO-DO: Need logic to test if logged in (Facebook cookie & GET request to sessions database)
-  
+  // This is a last-minute attempt to get this to work
+
+  // useEffect(() => {
+  //   fetch('/checklogin')
+  //     // .then(data => data.json())
+  //     .then(data => {
+  //       console.log(data);
+  //       if (data.status === 314) {
+  //         console.log("User is not logged in");
+  //       } else {
+  //         console.log(data);
+  //         setIsLoggedIn('true');
+  //         console.log("User is logged in!");
+  //       }
+  //     })
+  // }, [])
+
+
   // takes google autocomplete result and parses into object for backend
   const onAddressSubmit = (address) => {
     let splitAddress = address.description.split(', ');
@@ -26,7 +43,7 @@ const App = props => {
   }
 
   // google places is a paid api... insert your key here
-  const API_KEY = 'AIzaSyBHAs4K-WNgIbaFgjYvFML5zc8KQZ5Sgy8';
+  const API_KEY = '';
 
   return (
     <React.Fragment>

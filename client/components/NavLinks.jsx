@@ -5,8 +5,12 @@ const NavLinks = ({ isLoggedIn }) => {
 
   return (
     <div className="nav-links">
-      {!isLoggedIn && <a href="/auth/facebook">Login with Facebook</a>}
-      {isLoggedIn && <a href="/logout">Logout</a>}
+      {!isLoggedIn && <Button variant="contained" size="small" href="/auth/facebook" color="primary">
+          Login with Facebook
+        </Button>}
+      {isLoggedIn && <Button variant="contained" size="small" href="/logout" color="primary">
+          Logout
+        </Button>}
     </div>
       // <FacebookLogin
       // appId="318062672725904"
